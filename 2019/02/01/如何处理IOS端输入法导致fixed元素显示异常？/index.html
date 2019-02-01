@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
 <title>如何处理IOS端输入法导致fixed元素显示异常？ - 丘山</title>
@@ -7,19 +7,19 @@
 
 
 
-    <meta name="description" content="手机端网页一个比较常见的交互场景就是输入，输入由输入框和输入法弹窗UI共同完成，为了更好的交互，手机端浏览器一般会自动将输入框滚动到屏幕中央，使用户能看到输入内容。但不同浏览器处理方式并不一样，导致UI多端不统一   描述：点击输入框框，弹出输入法框，按钮可能会被遮住。而在大部分安卓机型中，按钮是正常显示（图三）的  差异分析：ios 通过usb连接mac和ios，可以实现页面调试，通过调试 12">
+    <meta name="description" content="手机端网页一个比较常见的交互场景就是输入，输入由输入框和输入法弹窗UI共同完成，为了更好的交互，手机端浏览器一般会自动将输入框滚动到屏幕中央，使用户能看到输入内容。但不同浏览器处理方式并不一样，导致UI多端不统一">
 <meta name="keywords" content="个人网站,分享">
 <meta property="og:type" content="article">
 <meta property="og:title" content="如何处理IOS端输入法导致fixed元素显示异常？">
 <meta property="og:url" content="http://blog.ifnull.cn/2019/02/01/如何处理IOS端输入法导致fixed元素显示异常？/index.html">
 <meta property="og:site_name" content="丘山">
-<meta property="og:description" content="手机端网页一个比较常见的交互场景就是输入，输入由输入框和输入法弹窗UI共同完成，为了更好的交互，手机端浏览器一般会自动将输入框滚动到屏幕中央，使用户能看到输入内容。但不同浏览器处理方式并不一样，导致UI多端不统一   描述：点击输入框框，弹出输入法框，按钮可能会被遮住。而在大部分安卓机型中，按钮是正常显示（图三）的  差异分析：ios 通过usb连接mac和ios，可以实现页面调试，通过调试 12">
-<meta property="og:locale" content="default">
+<meta property="og:description" content="手机端网页一个比较常见的交互场景就是输入，输入由输入框和输入法弹窗UI共同完成，为了更好的交互，手机端浏览器一般会自动将输入框滚动到屏幕中央，使用户能看到输入内容。但不同浏览器处理方式并不一样，导致UI多端不统一">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://user-images.githubusercontent.com/10740017/50135310-aff37f80-02ce-11e9-8fe3-8429ba97f1b7.png">
-<meta property="og:updated_time" content="2019-02-01T07:15:21.437Z">
+<meta property="og:updated_time" content="2019-02-01T08:51:01.131Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何处理IOS端输入法导致fixed元素显示异常？">
-<meta name="twitter:description" content="手机端网页一个比较常见的交互场景就是输入，输入由输入框和输入法弹窗UI共同完成，为了更好的交互，手机端浏览器一般会自动将输入框滚动到屏幕中央，使用户能看到输入内容。但不同浏览器处理方式并不一样，导致UI多端不统一   描述：点击输入框框，弹出输入法框，按钮可能会被遮住。而在大部分安卓机型中，按钮是正常显示（图三）的  差异分析：ios 通过usb连接mac和ios，可以实现页面调试，通过调试 12">
+<meta name="twitter:description" content="手机端网页一个比较常见的交互场景就是输入，输入由输入框和输入法弹窗UI共同完成，为了更好的交互，手机端浏览器一般会自动将输入框滚动到屏幕中央，使用户能看到输入内容。但不同浏览器处理方式并不一样，导致UI多端不统一">
 <meta name="twitter:image" content="https://user-images.githubusercontent.com/10740017/50135310-aff37f80-02ce-11e9-8fe3-8429ba97f1b7.png">
 
 
@@ -123,7 +123,7 @@
                 
                 
                 
-                <a class="navbar-item search" title="Search" href="javascript:;">
+                <a class="navbar-item search" title="搜索" href="javascript:;">
                     <i class="fas fa-search"></i>
                 </a>
                 
@@ -147,7 +147,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    4 minutes read (About 645 words)
+                    4 分钟 读完 (大约 646 个字)
                 </span>
                 
             </div>
@@ -161,6 +161,7 @@
         <div class="content">
             <p>手机端网页一个比较常见的交互场景就是输入，输入由<code>输入框</code>和<code>输入法弹窗UI</code>共同完成，为了更好的交互，手机端浏览器一般会自动将<code>输入框</code>滚动到屏幕中央，使用户能看到输入内容。但不同浏览器处理方式并不一样，导致UI多端不统一</p>
 <p><img src="https://user-images.githubusercontent.com/10740017/50135310-aff37f80-02ce-11e9-8fe3-8429ba97f1b7.png" alt="image"></p>
+<a id="more"></a>
 <blockquote>
 <p>描述：点击输入框框，弹出输入法框，按钮可能会被遮住。<strong>而在大部分安卓机型中，按钮是正常显示（图三）的</strong></p>
 </blockquote>
@@ -216,7 +217,7 @@
 
 <div class="card">
     <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">Comments</h3>
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
         
 <script>
     var disqus_config = function () {
@@ -243,7 +244,7 @@
 
 
 
-<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left is-sticky">
     
         
 <div class="card widget">
@@ -277,7 +278,7 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Posts
+                        文章
                     </p>
                     <p class="title has-text-weight-normal">
                         8
@@ -287,7 +288,7 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Category
+                        分类
                     </p>
                     <p class="title has-text-weight-normal">
                         1
@@ -297,7 +298,7 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Tags
+                        标签
                     </p>
                     <p class="title has-text-weight-normal">
                         5
@@ -307,7 +308,7 @@
         </nav>
         <div class="level">
             <a class="level-item button is-link is-rounded" href="http://github.com/chenyungcs">
-                Follow</a>
+                关注我</a>
         </div>
         
         
@@ -343,13 +344,11 @@
 </div>
     
         
-    
-        
 <div class="card widget">
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Categories
+                分类
             </h3>
             <ul class="menu-list">
             <li>
@@ -370,10 +369,12 @@
         <div class="column-right-shadow is-hidden-widescreen ">
         
             
+        
+            
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Recent
+            最新文章
         </h3>
         
         <article class="media">
@@ -479,14 +480,14 @@
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archives
+            归档
         </h3>
         <ul class="menu-list">
         
         <li>
             <a class="level is-marginless" href="/archives/2019/02/">
                 <span class="level-start">
-                    <span class="level-item">February 2019</span>
+                    <span class="level-item">二月 2019</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">8</span>
@@ -503,7 +504,7 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Tags
+                标签
             </h3>
             <div class="field is-grouped is-grouped-multiline">
                 
@@ -559,10 +560,12 @@
 <div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
     
         
+    
+        
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Recent
+            最新文章
         </h3>
         
         <article class="media">
@@ -668,14 +671,14 @@
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archives
+            归档
         </h3>
         <ul class="menu-list">
         
         <li>
             <a class="level is-marginless" href="/archives/2019/02/">
                 <span class="level-start">
-                    <span class="level-item">February 2019</span>
+                    <span class="level-item">二月 2019</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">8</span>
@@ -692,7 +695,7 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Tags
+                标签
             </h3>
             <div class="field is-grouped is-grouped-multiline">
                 
@@ -777,7 +780,7 @@
 </footer>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
-<script>moment.locale("en");</script>
+<script>moment.locale("zh-CN");</script>
 
 
     
@@ -831,7 +834,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
     
 
-<a id="back-to-top" title="Back to Top" href="javascript:;">
+<a id="back-to-top" title="回到顶端" href="javascript:;">
     <i class="fas fa-chevron-up"></i>
 </a>
 <script src="/js/back-to-top.js" defer></script>
@@ -863,7 +866,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="searchbox ins-search">
     <div class="searchbox-container ins-search-container">
         <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something...">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么...">
             <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="searchbox-result-wrapper ins-section-wrapper">
@@ -875,11 +878,11 @@ document.addEventListener('DOMContentLoaded', function () {
     (function (window) {
         var INSIGHT_CONFIG = {
             TRANSLATION: {
-                POSTS: 'Posts',
-                PAGES: 'Pages',
-                CATEGORIES: 'Categories',
-                TAGS: 'Tags',
-                UNTITLED: '(Untitled)',
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
             },
             CONTENT_URL: '/content.json',
         };

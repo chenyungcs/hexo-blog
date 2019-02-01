@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
 <title>记一次unload相关的问题 - 丘山</title>
@@ -7,21 +7,21 @@
 
 
 
-    <meta name="description" content="一如既往，开发中遇到的问题。  需求：大佬说，我要在用户离开时记录一下。做一个百度的「实时访客」功能SO：我们是单页应用访问每个页面时，发送一个请求，告诉服务器，访问啥页面如果第一次访问，后端返回一个ID作为访问行为的标志onunload事件中发个请求 #14 ，告诉服务器，客户离开了下班走人~~ 好像没这么简单，于是再来一遍 SO 假设：浏览器可能不会正常关闭那就增加一个「异常」状态，如果超过">
+    <meta name="description" content="一如既往，开发中遇到的问题。  需求： 大佬说，我要在用户离开时记录一下。做一个百度的「实时访客」功能 SO： 我们是单页应用 访问每个页面时，发送一个请求，告诉服务器，访问啥页面 如果第一次访问，后端返回一个ID作为访问行为的标志 onunload事件中发个请求 #14 ，告诉服务器，客户离开了  下班走人~~ 好像没这么简单，于是再来一遍">
 <meta name="keywords" content="JavaScript,Event">
 <meta property="og:type" content="article">
 <meta property="og:title" content="记一次unload相关的问题">
 <meta property="og:url" content="http://blog.ifnull.cn/2019/02/01/记一次unload相关的问题/index.html">
 <meta property="og:site_name" content="丘山">
-<meta property="og:description" content="一如既往，开发中遇到的问题。  需求：大佬说，我要在用户离开时记录一下。做一个百度的「实时访客」功能SO：我们是单页应用访问每个页面时，发送一个请求，告诉服务器，访问啥页面如果第一次访问，后端返回一个ID作为访问行为的标志onunload事件中发个请求 #14 ，告诉服务器，客户离开了下班走人~~ 好像没这么简单，于是再来一遍 SO 假设：浏览器可能不会正常关闭那就增加一个「异常」状态，如果超过">
-<meta property="og:locale" content="default">
+<meta property="og:description" content="一如既往，开发中遇到的问题。  需求： 大佬说，我要在用户离开时记录一下。做一个百度的「实时访客」功能 SO： 我们是单页应用 访问每个页面时，发送一个请求，告诉服务器，访问啥页面 如果第一次访问，后端返回一个ID作为访问行为的标志 onunload事件中发个请求 #14 ，告诉服务器，客户离开了  下班走人~~ 好像没这么简单，于是再来一遍">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://user-images.githubusercontent.com/10740017/42142651-21865800-7de3-11e8-9b50-035e671ce9c7.png">
 <meta property="og:image" content="https://user-images.githubusercontent.com/10740017/42143271-db56f5d4-7de6-11e8-8ec9-fed97eb45a13.png">
 <meta property="og:image" content="https://user-images.githubusercontent.com/10740017/42143564-46368670-7de8-11e8-8329-36c4329e1c2c.png">
-<meta property="og:updated_time" content="2019-02-01T06:29:10.754Z">
+<meta property="og:updated_time" content="2019-02-01T08:51:22.127Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="记一次unload相关的问题">
-<meta name="twitter:description" content="一如既往，开发中遇到的问题。  需求：大佬说，我要在用户离开时记录一下。做一个百度的「实时访客」功能SO：我们是单页应用访问每个页面时，发送一个请求，告诉服务器，访问啥页面如果第一次访问，后端返回一个ID作为访问行为的标志onunload事件中发个请求 #14 ，告诉服务器，客户离开了下班走人~~ 好像没这么简单，于是再来一遍 SO 假设：浏览器可能不会正常关闭那就增加一个「异常」状态，如果超过">
+<meta name="twitter:description" content="一如既往，开发中遇到的问题。  需求： 大佬说，我要在用户离开时记录一下。做一个百度的「实时访客」功能 SO： 我们是单页应用 访问每个页面时，发送一个请求，告诉服务器，访问啥页面 如果第一次访问，后端返回一个ID作为访问行为的标志 onunload事件中发个请求 #14 ，告诉服务器，客户离开了  下班走人~~ 好像没这么简单，于是再来一遍">
 <meta name="twitter:image" content="https://user-images.githubusercontent.com/10740017/42142651-21865800-7de3-11e8-9b50-035e671ce9c7.png">
 
 
@@ -125,7 +125,7 @@
                 
                 
                 
-                <a class="navbar-item search" title="Search" href="javascript:;">
+                <a class="navbar-item search" title="搜索" href="javascript:;">
                     <i class="fas fa-search"></i>
                 </a>
                 
@@ -153,7 +153,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    4 minutes read (About 662 words)
+                    4 分钟 读完 (大约 663 个字)
                 </span>
                 
             </div>
@@ -168,12 +168,24 @@
             <blockquote>
 <p>一如既往，开发中遇到的问题。</p>
 </blockquote>
-<p>需求：<br>大佬说，我要在用户离开时记录一下。做一个百度的「实时访客」功能<br>SO：<br>我们是单页应用<br>访问每个页面时，发送一个请求，告诉服务器，访问啥页面<br>如果第一次访问，后端返回一个<code>ID</code>作为访问行为的标志<br><code>onunload事件</code>中发个请求 #14 ，告诉服务器，客户离开了<br>下班走人~~</p>
+<p>需求：
+大佬说，我要在用户离开时记录一下。做一个百度的「实时访客」功能
+SO：
+我们是单页应用
+访问每个页面时，发送一个请求，告诉服务器，访问啥页面
+如果第一次访问，后端返回一个<code>ID</code>作为访问行为的标志
+<code>onunload事件</code>中发个请求 #14 ，告诉服务器，客户离开了 
+下班走人~~</p>
 <p>好像没这么简单，于是再来一遍</p>
+<a id="more"></a>
 <p><strong>SO</strong></p>
-<p>假设：浏览器可能不会正常关闭<br><em>那就增加一个「异常」状态，如果超过一段时间没关闭那就异常吧，毕竟微信不是我家开的</em></p>
-<p>假设：我们产品运行在厉害的（万恶的）微信浏览器上，会不会出幺蛾子呢？<br><em>杀千刀的，浏览器内核不同，还好有兼容指南</em><br><img src="https://user-images.githubusercontent.com/10740017/42142651-21865800-7de3-11e8-9b50-035e671ce9c7.png" alt="image"></p>
-<p>假设：刷新呢？也会执行<code>onunload</code><br><em>好办，记录一下id到<code>storage</code>，如果刷新肯定会再次发「访问请求」，把这个id传给后端</em> </p>
+<p>假设：浏览器可能不会正常关闭
+<em>那就增加一个「异常」状态，如果超过一段时间没关闭那就异常吧，毕竟微信不是我家开的</em></p>
+<p>假设：我们产品运行在厉害的（万恶的）微信浏览器上，会不会出幺蛾子呢？
+<em>杀千刀的，浏览器内核不同，还好有兼容指南</em>
+<img src="https://user-images.githubusercontent.com/10740017/42142651-21865800-7de3-11e8-9b50-035e671ce9c7.png" alt="image"></p>
+<p>假设：刷新呢？也会执行<code>onunload</code>
+<em>好办，记录一下id到<code>storage</code>，如果刷新肯定会再次发「访问请求」，把这个id传给后端</em> </p>
 <p>看似一切都好办，其实坑常在。由于操作的特殊性，浏览器的安全策略，会阻止一些操作，例如：</p>
 <h2 id="在ios环境下，unload-中执行-localStorage就是不得行"><a href="#在ios环境下，unload-中执行-localStorage就是不得行" class="headerlink" title="在ios环境下，unload 中执行 localStorage就是不得行"></a>在ios环境下，<code>unload</code> 中执行 <code>localStorage</code>就是不得行</h2><p><code>storage</code> 有两种：<code>session</code> 和 <code>local</code>，都是基于<code>cookie</code>，两者api都一样，区别就在于：<code>session</code>的生命周期是一次会话；而<code>localStorage</code>，需要手动清除。对于浏览器来说，<code>localStorage</code>会导致内存增加，影响性能，so，我猜，这个用户无感知（意想不到）的操作，ios是不允许的。</p>
 <p>于是，尝试<code>session</code>，正好，该特性十分适合这个需求。浏览器会话只会在关闭时结束，所以理所当然，离开时，id也就销毁的，而刷新则还在，十分契合。</p>
@@ -184,7 +196,8 @@
 <p><img src="https://user-images.githubusercontent.com/10740017/42143271-db56f5d4-7de6-11e8-8ec9-fed97eb45a13.png" alt="image"></p>
 <p>在MDN上寻觅后，发现<code>pageHide</code>与之同效，与<code>pageHide</code> 对应的api有<code>pageShow</code></p>
 <p><img src="https://user-images.githubusercontent.com/10740017/42143564-46368670-7de8-11e8-8329-36c4329e1c2c.png" alt="image"></p>
-<p>是时候，发挥咱们前端的真实作用了…<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const eventName = $deviceTypeIs(&apos;ios&apos;) ? &apos;pagehide&apos; : &apos;unload&apos;;</span><br><span class="line"></span><br><span class="line">// 监听刷新</span><br><span class="line">window.addEventListener(eventName, (e) =&gt; &#123;</span><br><span class="line">    /* do */</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>是时候，发挥咱们前端的真实作用了…
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const eventName = $deviceTypeIs(&apos;ios&apos;) ? &apos;pagehide&apos; : &apos;unload&apos;;</span><br><span class="line"></span><br><span class="line">// 监听刷新</span><br><span class="line">window.addEventListener(eventName, (e) =&gt; &#123;</span><br><span class="line">    /* do */</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
 <li>使用 <code>unload</code> 和 <code>pageHide</code></li>
 <li><code>localStorage</code> 和 <code>sessionStorage</code></li>
@@ -235,7 +248,7 @@
 
 <div class="card">
     <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">Comments</h3>
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
         
 <script>
     var disqus_config = function () {
@@ -262,7 +275,7 @@
 
 
 
-<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left is-sticky">
     
         
 <div class="card widget">
@@ -296,7 +309,7 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Posts
+                        文章
                     </p>
                     <p class="title has-text-weight-normal">
                         8
@@ -306,7 +319,7 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Category
+                        分类
                     </p>
                     <p class="title has-text-weight-normal">
                         1
@@ -316,7 +329,7 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Tags
+                        标签
                     </p>
                     <p class="title has-text-weight-normal">
                         5
@@ -326,7 +339,7 @@
         </nav>
         <div class="level">
             <a class="level-item button is-link is-rounded" href="http://github.com/chenyungcs">
-                Follow</a>
+                关注我</a>
         </div>
         
         
@@ -362,13 +375,11 @@
 </div>
     
         
-    
-        
 <div class="card widget">
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Categories
+                分类
             </h3>
             <ul class="menu-list">
             <li>
@@ -389,10 +400,12 @@
         <div class="column-right-shadow is-hidden-widescreen ">
         
             
+        
+            
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Recent
+            最新文章
         </h3>
         
         <article class="media">
@@ -498,14 +511,14 @@
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archives
+            归档
         </h3>
         <ul class="menu-list">
         
         <li>
             <a class="level is-marginless" href="/archives/2019/02/">
                 <span class="level-start">
-                    <span class="level-item">February 2019</span>
+                    <span class="level-item">二月 2019</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">8</span>
@@ -522,7 +535,7 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Tags
+                标签
             </h3>
             <div class="field is-grouped is-grouped-multiline">
                 
@@ -578,10 +591,12 @@
 <div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
     
         
+    
+        
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Recent
+            最新文章
         </h3>
         
         <article class="media">
@@ -687,14 +702,14 @@
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archives
+            归档
         </h3>
         <ul class="menu-list">
         
         <li>
             <a class="level is-marginless" href="/archives/2019/02/">
                 <span class="level-start">
-                    <span class="level-item">February 2019</span>
+                    <span class="level-item">二月 2019</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">8</span>
@@ -711,7 +726,7 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Tags
+                标签
             </h3>
             <div class="field is-grouped is-grouped-multiline">
                 
@@ -796,7 +811,7 @@
 </footer>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
-<script>moment.locale("en");</script>
+<script>moment.locale("zh-CN");</script>
 
 
     
@@ -850,7 +865,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
     
 
-<a id="back-to-top" title="Back to Top" href="javascript:;">
+<a id="back-to-top" title="回到顶端" href="javascript:;">
     <i class="fas fa-chevron-up"></i>
 </a>
 <script src="/js/back-to-top.js" defer></script>
@@ -882,7 +897,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="searchbox ins-search">
     <div class="searchbox-container ins-search-container">
         <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something...">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么...">
             <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="searchbox-result-wrapper ins-section-wrapper">
@@ -894,11 +909,11 @@ document.addEventListener('DOMContentLoaded', function () {
     (function (window) {
         var INSIGHT_CONFIG = {
             TRANSLATION: {
-                POSTS: 'Posts',
-                PAGES: 'Pages',
-                CATEGORIES: 'Categories',
-                TAGS: 'Tags',
-                UNTITLED: '(Untitled)',
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
             },
             CONTENT_URL: '/content.json',
         };

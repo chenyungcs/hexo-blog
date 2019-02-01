@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
 <title>浏览器关闭前向服务器发送一个请求，报告状态 - 丘山</title>
@@ -14,9 +14,9 @@
 <meta property="og:url" content="http://blog.ifnull.cn/2019/02/01/浏览器关闭前向服务器发送一个请求，报告状态/index.html">
 <meta property="og:site_name" content="丘山">
 <meta property="og:description" content="现接到一个需求，收集用户在我司网站的访问行为。  unload 当页面发生跳转、关闭、刷新会先执行beforeUnload，待确认后在执行unload，所以beforeUnload并不能确保一定会关闭  那就在unload事件里处理呗 123window.onunload = function () &amp;#123;document.getElement(&amp;apos;testImg&amp;apos;).s">
-<meta property="og:locale" content="default">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://user-images.githubusercontent.com/10740017/40912301-bfcc03fa-6823-11e8-870a-417df714dea6.png">
-<meta property="og:updated_time" content="2019-02-01T07:00:17.533Z">
+<meta property="og:updated_time" content="2019-02-01T08:51:10.179Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浏览器关闭前向服务器发送一个请求，报告状态">
 <meta name="twitter:description" content="现接到一个需求，收集用户在我司网站的访问行为。  unload 当页面发生跳转、关闭、刷新会先执行beforeUnload，待确认后在执行unload，所以beforeUnload并不能确保一定会关闭  那就在unload事件里处理呗 123window.onunload = function () &amp;#123;document.getElement(&amp;apos;testImg&amp;apos;).s">
@@ -123,7 +123,7 @@
                 
                 
                 
-                <a class="navbar-item search" title="Search" href="javascript:;">
+                <a class="navbar-item search" title="搜索" href="javascript:;">
                     <i class="fas fa-search"></i>
                 </a>
                 
@@ -151,7 +151,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 minutes read (About 290 words)
+                    2 分钟 读完 (大约 291 个字)
                 </span>
                 
             </div>
@@ -173,6 +173,7 @@
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">window.onunload = function () &#123;</span><br><span class="line">document.getElement(&apos;testImg&apos;).src = &apos;http://xxxx.com/collect_page?url=xxxxx&apos;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>设置<code>&lt;img /&gt;</code>标签地址为接口地址，然后发生请求，然后下班完事了。这么简单？实际情况是：我败了！</p>
 <p>balabala….!!!!</p>
+<a id="more"></a>
 <p>网上一顿搜索，都说「同步请求」可解决问题。想象<code>alert</code>是同步执行，可阻止进程，那就试一下吧。</p>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">window.onunload = function () &#123;</span><br><span class="line">    var req = new XMLHttpRequest();</span><br><span class="line">    req.open(&apos;GET&apos;, &apos;http://127.0.0.1:7002/login?id=1&apos;, false);</span><br><span class="line">    req.send();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>大功告成，下班走人！！</p>
@@ -225,7 +226,7 @@
 
 <div class="card">
     <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">Comments</h3>
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
         
 <script>
     var disqus_config = function () {
@@ -252,7 +253,7 @@
 
 
 
-<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left is-sticky">
     
         
 <div class="card widget">
@@ -286,7 +287,7 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Posts
+                        文章
                     </p>
                     <p class="title has-text-weight-normal">
                         8
@@ -296,7 +297,7 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Category
+                        分类
                     </p>
                     <p class="title has-text-weight-normal">
                         1
@@ -306,7 +307,7 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Tags
+                        标签
                     </p>
                     <p class="title has-text-weight-normal">
                         5
@@ -316,7 +317,7 @@
         </nav>
         <div class="level">
             <a class="level-item button is-link is-rounded" href="http://github.com/chenyungcs">
-                Follow</a>
+                关注我</a>
         </div>
         
         
@@ -352,13 +353,11 @@
 </div>
     
         
-    
-        
 <div class="card widget">
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Categories
+                分类
             </h3>
             <ul class="menu-list">
             <li>
@@ -379,10 +378,12 @@
         <div class="column-right-shadow is-hidden-widescreen ">
         
             
+        
+            
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Recent
+            最新文章
         </h3>
         
         <article class="media">
@@ -488,14 +489,14 @@
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archives
+            归档
         </h3>
         <ul class="menu-list">
         
         <li>
             <a class="level is-marginless" href="/archives/2019/02/">
                 <span class="level-start">
-                    <span class="level-item">February 2019</span>
+                    <span class="level-item">二月 2019</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">8</span>
@@ -512,7 +513,7 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Tags
+                标签
             </h3>
             <div class="field is-grouped is-grouped-multiline">
                 
@@ -568,10 +569,12 @@
 <div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
     
         
+    
+        
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Recent
+            最新文章
         </h3>
         
         <article class="media">
@@ -677,14 +680,14 @@
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archives
+            归档
         </h3>
         <ul class="menu-list">
         
         <li>
             <a class="level is-marginless" href="/archives/2019/02/">
                 <span class="level-start">
-                    <span class="level-item">February 2019</span>
+                    <span class="level-item">二月 2019</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">8</span>
@@ -701,7 +704,7 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Tags
+                标签
             </h3>
             <div class="field is-grouped is-grouped-multiline">
                 
@@ -786,7 +789,7 @@
 </footer>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
-<script>moment.locale("en");</script>
+<script>moment.locale("zh-CN");</script>
 
 
     
@@ -840,7 +843,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
     
 
-<a id="back-to-top" title="Back to Top" href="javascript:;">
+<a id="back-to-top" title="回到顶端" href="javascript:;">
     <i class="fas fa-chevron-up"></i>
 </a>
 <script src="/js/back-to-top.js" defer></script>
@@ -872,7 +875,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="searchbox ins-search">
     <div class="searchbox-container ins-search-container">
         <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something...">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么...">
             <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="searchbox-result-wrapper ins-section-wrapper">
@@ -884,11 +887,11 @@ document.addEventListener('DOMContentLoaded', function () {
     (function (window) {
         var INSIGHT_CONFIG = {
             TRANSLATION: {
-                POSTS: 'Posts',
-                PAGES: 'Pages',
-                CATEGORIES: 'Categories',
-                TAGS: 'Tags',
-                UNTITLED: '(Untitled)',
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
             },
             CONTENT_URL: '/content.json',
         };

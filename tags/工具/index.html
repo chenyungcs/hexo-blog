@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>Tag: 工具 - 丘山</title>
+<title>标签: 工具 - 丘山</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
@@ -14,7 +14,7 @@
 <meta property="og:url" content="http://blog.ifnull.cn/tags/工具/index.html">
 <meta property="og:site_name" content="丘山">
 <meta property="og:description" content="enum ...">
-<meta property="og:locale" content="default">
+<meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="丘山">
 <meta name="twitter:description" content="enum ...">
@@ -120,7 +120,7 @@
                 
                 
                 
-                <a class="navbar-item search" title="Search" href="javascript:;">
+                <a class="navbar-item search" title="搜索" href="javascript:;">
                     <i class="fas fa-search"></i>
                 </a>
                 
@@ -136,7 +136,7 @@
     <div class="card-content">
         <nav class="breadcrumb" aria-label="breadcrumbs">
         <ul>
-            <li><a href="/tags">Tags</a></li>
+            <li><a href="/tags">标签</a></li>
             <li class="is-active"><a href="#" aria-current="page">工具</a></li>
         </ul>
         </nav>
@@ -159,7 +159,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    6 minutes read (About 899 words)
+                    6 分钟 读完 (大约 900 个字)
                 </span>
                 
             </div>
@@ -176,44 +176,18 @@
 </blockquote>
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><a href="https://github.com/nuysoft/Mock/wiki/Getting-Started" target="_blank" rel="noopener">https://github.com/nuysoft/Mock/wiki/Getting-Started</a></p>
 <p>根据自己项目调整就好了。</p>
-<p>html<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;http://mockjs.com/dist/mock.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;!-- 主要是进行配置：timeout 目前唯一的配置项 --&gt;</span><br><span class="line">&lt;script src=&quot;./js/mock/index.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;!-- 分接口的Mock规则 --&gt;</span><br><span class="line">&lt;script src=&quot;./js/mock/MallStatistics.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
-<p><code>MallStatistics.js</code></p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 请求成功的返回格式</span><br><span class="line"> */</span><br><span class="line">function successBody (body, limit = 0) &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">        [`data$&#123;limit ? &apos;|&apos; + limit : &apos;&apos;&#125;`]: body,</span><br><span class="line">        &apos;code&apos;: 0</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 请求失败的返回格式</span><br><span class="line"> */</span><br><span class="line">function errorBody (body, code = 1001) &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">        &apos;data&apos;: body,</span><br><span class="line">        &apos;code&apos;: code</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var liveRule = new RegExp(&apos;/mock/mall/live?.+&apos;, &apos;&apos;);</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 实时访客</span><br><span class="line"> */</span><br><span class="line">Mock.mock(liveRule, &apos;get&apos;, function (&#123; body &#125;) &#123;</span><br><span class="line">    var &#123; limit = 20, offset, date &#125; = JSON.parse(body);</span><br><span class="line"></span><br><span class="line">    // 模拟数据</span><br><span class="line">    var data = Mock.mock(successBody(</span><br><span class="line">        &#123;</span><br><span class="line">            [`meta|$&#123;limit&#125;`]: [&#123;</span><br><span class="line">                &apos;access_time&apos;: `$&#123;date&#125; @TIME`,                     // 访问时间</span><br><span class="line">                &apos;client_number&apos;: &apos;@INTEGER(10000, 99999)&apos;,      // 客户编号</span><br><span class="line">                &apos;client_name&apos;: &apos;@CWORD(6,20)&apos;,                  // 客户名称（店名）</span><br><span class="line">                &apos;main_account&apos;: &apos;@CNAME&apos;,                       // 主账号</span><br><span class="line">                &apos;phone&apos;: &apos;182@INTEGER(1000, 9999)@INTEGER(1000, 9999)&apos;, // 手机</span><br><span class="line">                &apos;dc_name|1&apos;: [&apos;楼兰&apos;, &apos;大燕京&apos;, &apos;你看&apos;, &apos;数据啊&apos;, &apos;&apos;], // 营业部</span><br><span class="line">                &apos;place_order|1&apos;: [true, false],                 // 是否下单</span><br><span class="line">                &apos;residence_time&apos;: &apos;@INTEGER(5, 10000)&apos;,         // 停留时间？这个是否从access_url中统计（前端处理）</span><br><span class="line">                &apos;is_active|1&apos;: [true, false],                   // 是否正在访问</span><br><span class="line">                &apos;access_url|1-50&apos;: [&#123;                          // 访问记录</span><br><span class="line">                    &apos;access_time&apos;: &apos;@TIME&apos;, // - 访问时间</span><br><span class="line">                    &apos;residence_time&apos;: &apos;@INTEGER(5, 10000)&apos;,     // - 停留时间</span><br><span class="line">                    &apos;url&apos;: &apos;http://mall.balabala.cn/#/@NAME&apos;       // - url</span><br><span class="line"></span><br><span class="line">                &#125;]</span><br><span class="line">            &#125;],</span><br><span class="line">            &apos;total&apos;: `@INTEGER($&#123;limit&#125;, $&#123;limit*10&#125;)`</span><br><span class="line">        &#125;</span><br><span class="line">    ));</span><br><span class="line">    data.data.meta = _.sortBy(data.data.meta, &apos;access_time&apos;).reverse();</span><br><span class="line"></span><br><span class="line">    return data;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h2 id="需要注意的语法规范"><a href="#需要注意的语法规范" class="headerlink" title="需要注意的语法规范"></a>需要注意的语法规范</h2><p><em>数据模板中的每个属性由 3 部分构成：属性名、生成规则、属性值</em></p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 属性名   name</span><br><span class="line">// 生成规则 rule</span><br><span class="line">// 属性值   value</span><br><span class="line">&apos;name|rule&apos;: value</span><br></pre></td></tr></table></figure>
-<h4 id="生成规则"><a href="#生成规则" class="headerlink" title="生成规则|"></a>生成规则<code>|</code></h4><p>当<code>|</code>规则为空时，表示为<code>|0</code></p>
-<h4 id="占位符"><a href="#占位符" class="headerlink" title="占位符"></a>占位符</h4><p><code>Mock</code>内置了强大的<code>Random</code>对象。可通过对象调用，也可以通过「占位符」，例如：</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 生成一个随机英文名</span><br><span class="line">&#123;</span><br><span class="line">    &apos;name&apos;: Mock. Random.name()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 那这样呢？</span><br><span class="line">&#123;</span><br><span class="line">    &apos;data|10&apos;: [&#123;</span><br><span class="line">        &apos;name&apos;: Mock.Random.name()</span><br><span class="line">    &#125;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>可见连续生成了10个同样的数据，我们需要随机生成不同的。有两种方法:</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">// 通过function</span><br><span class="line">&#123;</span><br><span class="line">    &apos;data|10&apos;: [&#123;</span><br><span class="line">        &apos;name&apos;: function () &#123;</span><br><span class="line">            return Mock.Random.name();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 通过占位符</span><br><span class="line">&#123;</span><br><span class="line">    &apos;data|10&apos;: [&#123;</span><br><span class="line">        &apos;cname&apos;: &apos;@CNAME&apos;,</span><br><span class="line">        &apos;englishName&apos;: &apos;@FIRST@MIDDLE@LAST&apos;</span><br><span class="line">    &#125;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>可见，通过占位符调用<code>Random</code>里的方法，就是<code>@全大写的方法名</code><br>对了，你还可以<code>@已有规则</code>，例如：</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &apos;data|10&apos;: [&#123;</span><br><span class="line">        &apos;myName&apos;: &apos;@CNAME&apos;,</span><br><span class="line">        &apos;store&apos;: &apos;@myName的小店&apos;</span><br><span class="line">    &#125;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="mock-rurl-rtype-template-function-options-方法的使用"><a href="#mock-rurl-rtype-template-function-options-方法的使用" class="headerlink" title="mock(rurl?, rtype?, template|function( options ))方法的使用"></a><code>mock(rurl?, rtype?, template|function( options ))</code>方法的使用</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rurl      -&gt; url规则</span><br><span class="line">rtype   -&gt; 请求类型</span><br></pre></td></tr></table></figure>
-<p>方法很简单，很好使用，只有两点需要注意的。</p>
-<ol>
-<li><code>get</code>请求下，参数也会被视作<code>url</code>的一部分，例如<code>user?id=1</code>，这也是开头我使用正则的原因。<br>👇下面的例子将无法正确匹配</li>
-</ol>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// mock</span><br><span class="line">/user</span><br><span class="line"></span><br><span class="line">// http</span><br><span class="line">$.ajax.get(&apos;user/&apos;, &#123;</span><br><span class="line">    id: 1,</span><br><span class="line">    name: &apos;李四&apos;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>请求类型在大多数情况下是不需要的。<br>但，如果你的接口是<code>RESTful风格</code>，加上Type就十分必要的</li>
-</ol>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">DELETE : /user</span><br><span class="line">GET:          /user</span><br><span class="line">POST:       /user</span><br></pre></td></tr></table></figure>
-<h2 id="timeout-重要性"><a href="#timeout-重要性" class="headerlink" title="timeout 重要性"></a><code>timeout</code> 重要性</h2><p>一般，我们的页面一加载，就会请求一波后端接口，受网络影响，会延迟那么一会儿。现在我们使用的<code>Mock</code>会在被调用的时候，马上去生成数据，由于生成数据算法影响 <strong>会卡一波</strong>。所以，别怪我没提醒你，乖乖的去设置你的<code>timeout</code>。</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Mock.setup(&#123;</span><br><span class="line">    &apos;timeout&apos;: 500</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p><strong>对了，那就顺便记录一下：</strong><br>当生成复杂列表时：超过100条会明显卡顿。</p>
-<h2 id="约定好Model"><a href="#约定好Model" class="headerlink" title="约定好Model"></a>约定好<code>Model</code></h2><blockquote>
-<p>开发前，一定和后端大佬约定好<code>Model</code>，接口地址、参数。</p>
-</blockquote>
-<p>大概就是酱紫😯，总结下</p>
-<ul>
-<li>注意语法规则</li>
-<li>注意url规则和请求类型</li>
-<li>设置<code>timeout</code></li>
-<li>约定<code>Model</code></li>
-</ul>
-
+<p>html
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;http://mockjs.com/dist/mock.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;!-- 主要是进行配置：timeout 目前唯一的配置项 --&gt;</span><br><span class="line">&lt;script src=&quot;./js/mock/index.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;!-- 分接口的Mock规则 --&gt;</span><br><span class="line">&lt;script src=&quot;./js/mock/MallStatistics.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/02/01/调试接口很痛苦有木有，小试一下Mock/#more">阅读更多</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -232,7 +206,7 @@
 
 
 
-<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left is-sticky">
     
         
 <div class="card widget">
@@ -266,7 +240,7 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Posts
+                        文章
                     </p>
                     <p class="title has-text-weight-normal">
                         8
@@ -276,7 +250,7 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Category
+                        分类
                     </p>
                     <p class="title has-text-weight-normal">
                         1
@@ -286,7 +260,7 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Tags
+                        标签
                     </p>
                     <p class="title has-text-weight-normal">
                         5
@@ -296,7 +270,7 @@
         </nav>
         <div class="level">
             <a class="level-item button is-link is-rounded" href="http://github.com/chenyungcs">
-                Follow</a>
+                关注我</a>
         </div>
         
         
@@ -332,13 +306,11 @@
 </div>
     
         
-    
-        
 <div class="card widget">
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Categories
+                分类
             </h3>
             <ul class="menu-list">
             <li>
@@ -359,10 +331,12 @@
         <div class="column-right-shadow is-hidden-widescreen ">
         
             
+        
+            
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Recent
+            最新文章
         </h3>
         
         <article class="media">
@@ -468,14 +442,14 @@
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archives
+            归档
         </h3>
         <ul class="menu-list">
         
         <li>
             <a class="level is-marginless" href="/archives/2019/02/">
                 <span class="level-start">
-                    <span class="level-item">February 2019</span>
+                    <span class="level-item">二月 2019</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">8</span>
@@ -492,7 +466,7 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Tags
+                标签
             </h3>
             <div class="field is-grouped is-grouped-multiline">
                 
@@ -548,10 +522,12 @@
 <div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
     
         
+    
+        
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Recent
+            最新文章
         </h3>
         
         <article class="media">
@@ -657,14 +633,14 @@
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archives
+            归档
         </h3>
         <ul class="menu-list">
         
         <li>
             <a class="level is-marginless" href="/archives/2019/02/">
                 <span class="level-start">
-                    <span class="level-item">February 2019</span>
+                    <span class="level-item">二月 2019</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">8</span>
@@ -681,7 +657,7 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Tags
+                标签
             </h3>
             <div class="field is-grouped is-grouped-multiline">
                 
@@ -766,7 +742,7 @@
 </footer>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
-<script>moment.locale("en");</script>
+<script>moment.locale("zh-CN");</script>
 
 
     
@@ -820,7 +796,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
     
 
-<a id="back-to-top" title="Back to Top" href="javascript:;">
+<a id="back-to-top" title="回到顶端" href="javascript:;">
     <i class="fas fa-chevron-up"></i>
 </a>
 <script src="/js/back-to-top.js" defer></script>
@@ -852,7 +828,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="searchbox ins-search">
     <div class="searchbox-container ins-search-container">
         <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something...">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么...">
             <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="searchbox-result-wrapper ins-section-wrapper">
@@ -864,11 +840,11 @@ document.addEventListener('DOMContentLoaded', function () {
     (function (window) {
         var INSIGHT_CONFIG = {
             TRANSLATION: {
-                POSTS: 'Posts',
-                PAGES: 'Pages',
-                CATEGORIES: 'Categories',
-                TAGS: 'Tags',
-                UNTITLED: '(Untitled)',
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
             },
             CONTENT_URL: '/content.json',
         };

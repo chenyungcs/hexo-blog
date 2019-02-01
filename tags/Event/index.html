@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>Tag: Event - 丘山</title>
+<title>标签: Event - 丘山</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
@@ -14,7 +14,7 @@
 <meta property="og:url" content="http://blog.ifnull.cn/tags/Event/index.html">
 <meta property="og:site_name" content="丘山">
 <meta property="og:description" content="enum ...">
-<meta property="og:locale" content="default">
+<meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="丘山">
 <meta name="twitter:description" content="enum ...">
@@ -120,7 +120,7 @@
                 
                 
                 
-                <a class="navbar-item search" title="Search" href="javascript:;">
+                <a class="navbar-item search" title="搜索" href="javascript:;">
                     <i class="fas fa-search"></i>
                 </a>
                 
@@ -136,7 +136,7 @@
     <div class="card-content">
         <nav class="breadcrumb" aria-label="breadcrumbs">
         <ul>
-            <li><a href="/tags">Tags</a></li>
+            <li><a href="/tags">标签</a></li>
             <li class="is-active"><a href="#" aria-current="page">Event</a></li>
         </ul>
         </nav>
@@ -159,7 +159,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 minutes read (About 290 words)
+                    2 分钟 读完 (大约 291 个字)
                 </span>
                 
             </div>
@@ -181,15 +181,16 @@
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">window.onunload = function () &#123;</span><br><span class="line">document.getElement(&apos;testImg&apos;).src = &apos;http://xxxx.com/collect_page?url=xxxxx&apos;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>设置<code>&lt;img /&gt;</code>标签地址为接口地址，然后发生请求，然后下班完事了。这么简单？实际情况是：我败了！</p>
 <p>balabala….!!!!</p>
-<p>网上一顿搜索，都说「同步请求」可解决问题。想象<code>alert</code>是同步执行，可阻止进程，那就试一下吧。</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">window.onunload = function () &#123;</span><br><span class="line">    var req = new XMLHttpRequest();</span><br><span class="line">    req.open(&apos;GET&apos;, &apos;http://127.0.0.1:7002/login?id=1&apos;, false);</span><br><span class="line">    req.send();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>大功告成，下班走人！！</p>
-<p>哎！等等好像跟<code>alert</code>没半毛钱关系… 继续关注中…<br>其实就是跟<code>alert</code>有关。只不过只有<code>IE</code>可以弹出<code>alert</code>。其他浏览器由于安全策略都不允许弹出</p>
-<p><img src="https://user-images.githubusercontent.com/10740017/40912301-bfcc03fa-6823-11e8-870a-417df714dea6.png" alt="image"></p>
-<p>不同浏览器、系统间略有差别，暂时参考 #19 </p>
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/02/01/浏览器关闭前向服务器发送一个请求，报告状态/#more">阅读更多</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -218,7 +219,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 minutes read (About 307 words)
+                    2 分钟 读完 (大约 308 个字)
                 </span>
                 
             </div>
@@ -234,16 +235,18 @@
 <p>需求：在客户端监听keyup事件，实现数据切换</p>
 </blockquote>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 识别按键，分别执行数据切换、数据提交操作</span><br><span class="line">window.addEventListener(&apos;keyup&apos;, this.handleKeyUpEvent);</span><br></pre></td></tr></table></figure>
-<p>在keyup事件中，会去同步数据同时刷新<code>dom节点</code>。数据刷新不及时、页面感觉卡顿，why?<br>分析按键事件，<code>keydown -&gt; keyup</code>，这是两兄弟，对吧？所以keyup肯定是发生在keydown之后啦，所以页面卡顿… emum，具体延迟如下：</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">window.addEventListener(&apos;keydown&apos;, () =&gt; &#123;</span><br><span class="line">	console.time(&apos;keyup&apos;);</span><br><span class="line">&#125;); </span><br><span class="line"></span><br><span class="line">window.addEventListener(&apos;keyup&apos;, () =&gt; &#123;</span><br><span class="line">	console.timeEnd(&apos;keyup&apos;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// _&gt; keyup: 156.1640625ms</span><br><span class="line">// _&gt; keyup: 156.760009765625ms</span><br><span class="line">// _&gt; keyup: 47.076904296875ms</span><br></pre></td></tr></table></figure>
-<p>手速是响应的关键，并且，我觉得keyup事件，没这么简单，会不会还有「释放资源」这种骚操作？<strong>所以keyup处理的事情越简单，越好吧</strong></p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 改为keydown，keydown执行多次，节流？还是另行其法</span><br><span class="line">window.addEventListener(&apos;keydown&apos;, this.handleKeyDown);</span><br></pre></td></tr></table></figure>
-<p>keydown 会执行多次，在我的业务场景中，希望点一下按键，执行一下操作，所以，我希望，keydown执行一次，keyup一次，代码如下：</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">let keyUp = true;</span><br><span class="line">window.addEventListener(&apos;keydown&apos;, () =&gt; &#123;</span><br><span class="line">	if (keyUp) &#123;</span><br><span class="line">		keyUp = false;</span><br><span class="line">		// things to do</span><br><span class="line">	&#125;</span><br><span class="line">&#125;); </span><br><span class="line"></span><br><span class="line">window.addEventListener(&apos;keyup&apos;, () =&gt; &#123;</span><br><span class="line">	keyUp = true;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p><strong>最后：</strong> 记得销毁事件</p>
-
+<p>在keyup事件中，会去同步数据同时刷新<code>dom节点</code>。数据刷新不及时、页面感觉卡顿，why?
+分析按键事件，<code>keydown -&gt; keyup</code>，这是两兄弟，对吧？所以keyup肯定是发生在keydown之后啦，所以页面卡顿… emum，具体延迟如下：</p>
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/02/01/记keyup一个细节/#more">阅读更多</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -272,7 +275,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    4 minutes read (About 662 words)
+                    4 分钟 读完 (大约 663 个字)
                 </span>
                 
             </div>
@@ -287,30 +290,25 @@
             <blockquote>
 <p>一如既往，开发中遇到的问题。</p>
 </blockquote>
-<p>需求：<br>大佬说，我要在用户离开时记录一下。做一个百度的「实时访客」功能<br>SO：<br>我们是单页应用<br>访问每个页面时，发送一个请求，告诉服务器，访问啥页面<br>如果第一次访问，后端返回一个<code>ID</code>作为访问行为的标志<br><code>onunload事件</code>中发个请求 #14 ，告诉服务器，客户离开了<br>下班走人~~</p>
+<p>需求：
+大佬说，我要在用户离开时记录一下。做一个百度的「实时访客」功能
+SO：
+我们是单页应用
+访问每个页面时，发送一个请求，告诉服务器，访问啥页面
+如果第一次访问，后端返回一个<code>ID</code>作为访问行为的标志
+<code>onunload事件</code>中发个请求 #14 ，告诉服务器，客户离开了 
+下班走人~~</p>
 <p>好像没这么简单，于是再来一遍</p>
-<p><strong>SO</strong></p>
-<p>假设：浏览器可能不会正常关闭<br><em>那就增加一个「异常」状态，如果超过一段时间没关闭那就异常吧，毕竟微信不是我家开的</em></p>
-<p>假设：我们产品运行在厉害的（万恶的）微信浏览器上，会不会出幺蛾子呢？<br><em>杀千刀的，浏览器内核不同，还好有兼容指南</em><br><img src="https://user-images.githubusercontent.com/10740017/42142651-21865800-7de3-11e8-9b50-035e671ce9c7.png" alt="image"></p>
-<p>假设：刷新呢？也会执行<code>onunload</code><br><em>好办，记录一下id到<code>storage</code>，如果刷新肯定会再次发「访问请求」，把这个id传给后端</em> </p>
-<p>看似一切都好办，其实坑常在。由于操作的特殊性，浏览器的安全策略，会阻止一些操作，例如：</p>
-<h2 id="在ios环境下，unload-中执行-localStorage就是不得行"><a href="#在ios环境下，unload-中执行-localStorage就是不得行" class="headerlink" title="在ios环境下，unload 中执行 localStorage就是不得行"></a>在ios环境下，<code>unload</code> 中执行 <code>localStorage</code>就是不得行</h2><p><code>storage</code> 有两种：<code>session</code> 和 <code>local</code>，都是基于<code>cookie</code>，两者api都一样，区别就在于：<code>session</code>的生命周期是一次会话；而<code>localStorage</code>，需要手动清除。对于浏览器来说，<code>localStorage</code>会导致内存增加，影响性能，so，我猜，这个用户无感知（意想不到）的操作，ios是不允许的。</p>
-<p>于是，尝试<code>session</code>，正好，该特性十分适合这个需求。浏览器会话只会在关闭时结束，所以理所当然，离开时，id也就销毁的，而刷新则还在，十分契合。</p>
-<h2 id="unload-靠谱吗？"><a href="#unload-靠谱吗？" class="headerlink" title="unload 靠谱吗？"></a><code>unload</code> 靠谱吗？</h2><blockquote>
-<p>之前提到过，ios平台下，<code>unload</code>只在刷新时执行</p>
-</blockquote>
-<p>那<code>beforeUnload</code>呢？</p>
-<p><img src="https://user-images.githubusercontent.com/10740017/42143271-db56f5d4-7de6-11e8-8ec9-fed97eb45a13.png" alt="image"></p>
-<p>在MDN上寻觅后，发现<code>pageHide</code>与之同效，与<code>pageHide</code> 对应的api有<code>pageShow</code></p>
-<p><img src="https://user-images.githubusercontent.com/10740017/42143564-46368670-7de8-11e8-8329-36c4329e1c2c.png" alt="image"></p>
-<p>是时候，发挥咱们前端的真实作用了…<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const eventName = $deviceTypeIs(&apos;ios&apos;) ? &apos;pagehide&apos; : &apos;unload&apos;;</span><br><span class="line"></span><br><span class="line">// 监听刷新</span><br><span class="line">window.addEventListener(eventName, (e) =&gt; &#123;</span><br><span class="line">    /* do */</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
-<li>使用 <code>unload</code> 和 <code>pageHide</code></li>
-<li><code>localStorage</code> 和 <code>sessionStorage</code></li>
-</ul>
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/02/01/记一次unload相关的问题/#more">阅读更多</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -329,7 +327,7 @@
 
 
 
-<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left is-sticky">
     
         
 <div class="card widget">
@@ -363,7 +361,7 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Posts
+                        文章
                     </p>
                     <p class="title has-text-weight-normal">
                         8
@@ -373,7 +371,7 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Category
+                        分类
                     </p>
                     <p class="title has-text-weight-normal">
                         1
@@ -383,7 +381,7 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Tags
+                        标签
                     </p>
                     <p class="title has-text-weight-normal">
                         5
@@ -393,7 +391,7 @@
         </nav>
         <div class="level">
             <a class="level-item button is-link is-rounded" href="http://github.com/chenyungcs">
-                Follow</a>
+                关注我</a>
         </div>
         
         
@@ -429,13 +427,11 @@
 </div>
     
         
-    
-        
 <div class="card widget">
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Categories
+                分类
             </h3>
             <ul class="menu-list">
             <li>
@@ -456,10 +452,12 @@
         <div class="column-right-shadow is-hidden-widescreen ">
         
             
+        
+            
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Recent
+            最新文章
         </h3>
         
         <article class="media">
@@ -565,14 +563,14 @@
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archives
+            归档
         </h3>
         <ul class="menu-list">
         
         <li>
             <a class="level is-marginless" href="/archives/2019/02/">
                 <span class="level-start">
-                    <span class="level-item">February 2019</span>
+                    <span class="level-item">二月 2019</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">8</span>
@@ -589,7 +587,7 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Tags
+                标签
             </h3>
             <div class="field is-grouped is-grouped-multiline">
                 
@@ -645,10 +643,12 @@
 <div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
     
         
+    
+        
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Recent
+            最新文章
         </h3>
         
         <article class="media">
@@ -754,14 +754,14 @@
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archives
+            归档
         </h3>
         <ul class="menu-list">
         
         <li>
             <a class="level is-marginless" href="/archives/2019/02/">
                 <span class="level-start">
-                    <span class="level-item">February 2019</span>
+                    <span class="level-item">二月 2019</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">8</span>
@@ -778,7 +778,7 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Tags
+                标签
             </h3>
             <div class="field is-grouped is-grouped-multiline">
                 
@@ -863,7 +863,7 @@
 </footer>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
-<script>moment.locale("en");</script>
+<script>moment.locale("zh-CN");</script>
 
 
     
@@ -917,7 +917,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
     
 
-<a id="back-to-top" title="Back to Top" href="javascript:;">
+<a id="back-to-top" title="回到顶端" href="javascript:;">
     <i class="fas fa-chevron-up"></i>
 </a>
 <script src="/js/back-to-top.js" defer></script>
@@ -949,7 +949,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="searchbox ins-search">
     <div class="searchbox-container ins-search-container">
         <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something...">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么...">
             <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="searchbox-result-wrapper ins-section-wrapper">
@@ -961,11 +961,11 @@ document.addEventListener('DOMContentLoaded', function () {
     (function (window) {
         var INSIGHT_CONFIG = {
             TRANSLATION: {
-                POSTS: 'Posts',
-                PAGES: 'Pages',
-                CATEGORIES: 'Categories',
-                TAGS: 'Tags',
-                UNTITLED: '(Untitled)',
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
             },
             CONTENT_URL: '/content.json',
         };
