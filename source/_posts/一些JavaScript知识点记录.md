@@ -4,8 +4,10 @@ tags:
   - JavaScript
 categories:
   - 前端
+toc: true
 date: 2019-02-01 15:05:00
 ---
+
 - 闭包
 - [谈谈数据类型](#simpleType)
 - [垃圾回收机制](#trash)
@@ -31,6 +33,8 @@ for (var i = 0; i < 5; i++) {
 // 5
 // 5
 ```
+
+<!-- more -->
 
 面试官：非常好，为什么？
 小白我：因为没有闭包。
@@ -61,6 +65,7 @@ for (let i = 0; i < 5; i++) {
 ```
 
 ### `let` 特性
+
 - 不存在变量提升
 - 暂时性死区
 - 同一作用域不允许重复声明
@@ -243,5 +248,3 @@ index | 只读属性，匹配到的子串在原始字符串中的索引 | 1
 [1], ...[n] | 只读元素，正则表达式中所指定的分组所匹配到的子串，其数量由正则中的分组数量决定，无最大上限 | [1]: bB[2]: d
 
 摘自[MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array)
-
-

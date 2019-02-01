@@ -24,6 +24,8 @@ html
 <script src="./js/mock/MallStatistics.js"></script>
 ```
 
+<!-- more -->
+
 `MallStatistics.js`
 
 ```
@@ -36,6 +38,7 @@ function successBody (body, limit = 0) {
         'code': 0
     };
 }
+
 
 /**
  * 请求失败的返回格式

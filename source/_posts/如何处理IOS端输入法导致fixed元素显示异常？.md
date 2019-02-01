@@ -7,6 +7,8 @@ tags:
 
 ![image](https://user-images.githubusercontent.com/10740017/50135310-aff37f80-02ce-11e9-8fe3-8429ba97f1b7.png)
 
+<!-- more -->
+
 > 描述：点击输入框框，弹出输入法框，按钮可能会被遮住。**而在大部分安卓机型中，按钮是正常显示（图三）的**
 
 差异分析：ios

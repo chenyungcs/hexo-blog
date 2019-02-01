@@ -17,6 +17,8 @@ window.addEventListener('keyup', this.handleKeyUpEvent);
 在keyup事件中，会去同步数据同时刷新`dom节点`。数据刷新不及时、页面感觉卡顿，why?
 分析按键事件，`keydown -> keyup`，这是两兄弟，对吧？所以keyup肯定是发生在keydown之后啦，所以页面卡顿... emum，具体延迟如下：
 
+<!-- more -->
+
 ```
 window.addEventListener('keydown', () => {
 	console.time('keyup');
