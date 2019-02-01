@@ -2,7 +2,7 @@
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>丘山</title>
+<title>Etiqueta: JavaScript - 丘山</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
@@ -11,7 +11,7 @@
 <meta name="keywords" content="个人网站,分享">
 <meta property="og:type" content="website">
 <meta property="og:title" content="丘山">
-<meta property="og:url" content="http://blog.ifnull.cn/index.html">
+<meta property="og:url" content="http://blog.ifnull.cn/tags/JavaScript/index.html">
 <meta property="og:site_name" content="丘山">
 <meta property="og:description" content="enum ...">
 <meta property="og:locale" content="default">
@@ -95,7 +95,7 @@
             
             <div class="navbar-start">
                 
-                <a class="navbar-item is-active" href="/">主页</a>
+                <a class="navbar-item" href="/">主页</a>
                 
                 <a class="navbar-item" href="/archives">小黑屋</a>
                 
@@ -132,7 +132,17 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    <div class="card-content">
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul>
+            <li><a href="/tags">Etiquetas</a></li>
+            <li class="is-active"><a href="#" aria-current="page">JavaScript</a></li>
+        </ul>
+        </nav>
+    </div>
+</div>
+
     <div class="card">
     
     <div class="card-content article ">
@@ -186,73 +196,6 @@
 <li><code>localStorage</code> 和 <code>sessionStorage</code></li>
 </ul>
 
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-02-01T02:52:19.000Z">2019/02/01</time>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    4 minutes read (About 666 words)
-                </span>
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/02/01/如何处理IOS端输入法导致fixed元素显示异常？/">如何处理IOS端输入法导致fixed元素显示异常？</a>
-            
-        </h1>
-        <div class="content">
-            <p><img src="/images/pasted-3.png" alt="如何处理IOS端输入法导致fixed元素显示异常"></p>
-<p>手机端网页一个比较常见的交互场景就是输入，输入由<code>输入框</code>和<code>输入法弹窗UI</code>共同完成，为了更好的交互，手机端浏览器一般会自动将<code>输入框</code>滚动到屏幕中央，使用户能看到输入内容。但不同浏览器处理方式并不一样，导致UI多端不统一</p>
-<p><img src="https://user-images.githubusercontent.com/10740017/50135310-aff37f80-02ce-11e9-8fe3-8429ba97f1b7.png" alt="image"></p>
-<blockquote>
-<p>描述：点击输入框框，弹出输入法框，按钮可能会被遮住。<strong>而在大部分安卓机型中，按钮是正常显示（图三）的</strong></p>
-</blockquote>
-<p>差异分析：ios</p>
-<p>通过usb连接mac和ios，可以实现页面调试，通过调试</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">document.body.getBoundingClientRect()</span><br><span class="line">// _&gt; DOMRect &#123;x: 0, y: -298, width: 320, height: 434, top: -298, …&#125;</span><br></pre></td></tr></table></figure>
-<p>可以看出<code>body</code>整体上移了200多个像素，但<strong>高度却还是屏幕可视高度</strong>。</p>
-<p>找到原因了，那么就可以出解决方案了。有什么web api 可以解决吗？有没有较好的解决方案呢？</p>
-<p>web api我没有找到，本身这是个别浏览器内核不同实现，我们的业务中，按钮不需要显示在输入框上面，所以问题相对简单了。</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// 光标聚焦，文本框回归文档流</span><br><span class="line">handleFocus () &#123;</span><br><span class="line">    this.$refs.footer.style.position = &apos;static&apos;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 光标丢失，文本框脱离文档流</span><br><span class="line">handleBlur () &#123;</span><br><span class="line">    this.$refs.footer.style.position = &apos;fixed&apos;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这样处理，还能保证，各浏览器显示效果一致。</p>
-<p>ps:这样会损失一点点小小的性能（回流）</p>
-<h2 id="🤔如果按钮一定要显示到底部？"><a href="#🤔如果按钮一定要显示到底部？" class="headerlink" title="🤔如果按钮一定要显示到底部？"></a>🤔如果按钮一定要显示到底部？</h2><blockquote>
-<p>由于业务不需要实现，没去实践，只是简单分析下实现</p>
-</blockquote>
-<h3 id="通过js控制按钮位置"><a href="#通过js控制按钮位置" class="headerlink" title="通过js控制按钮位置"></a>通过js控制按钮位置</h3><ul>
-<li>判断平台</li>
-<li>光标聚焦后，获取<code>document.body.getBoundingClientRect</code>用于计算</li>
-<li>设置按钮距离顶部距离</li>
-</ul>
-<p>由于键盘弹出有过渡时间，所以这个方法体验可能不是太好</p>
-<h3 id="将按钮和固定区域（滚动区域）分为两块"><a href="#将按钮和固定区域（滚动区域）分为两块" class="headerlink" title="将按钮和固定区域（滚动区域）分为两块"></a>将按钮和固定区域（滚动区域）分为两块</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;wrapper&quot;&gt;</span><br><span class="line">    &lt;!-- 高度根据wrapper变 --&gt;</span><br><span class="line">    &lt;div class=&quot;content&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;!-- 固定高度，位于底部 --&gt;</span><br><span class="line">    &lt;button class=&quot;btn-bottom&quot;&gt;&lt;/button&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="🤔键盘隐藏后，页面下方留白"><a href="#🤔键盘隐藏后，页面下方留白" class="headerlink" title="🤔键盘隐藏后，页面下方留白"></a>🤔键盘隐藏后，页面下方留白</h2><blockquote>
-<p>ios 下，键盘隐藏后，会在页面下方留下（撑开）一片空包区域，滑动屏幕后便会消失，很奇怪。没仔细研究，感觉应该也是浏览器实现问题吧？想到一个hack的解决办法<code>模拟滑动屏幕的动作</code></p>
-</blockquote>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">handleBlur () &#123;</span><br><span class="line">    document.body.scrollBy(0, -1);</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
         </div>
         
         
