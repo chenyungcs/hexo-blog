@@ -2,16 +2,16 @@
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>Tags - 丘山</title>
+<title>Tag: 代码片段 - 丘山</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
     <meta name="description" content="enum ...">
-<meta name="keywords" content="JavaScript,代码片段,Css,Event,工具">
+<meta name="keywords" content="个人网站,分享">
 <meta property="og:type" content="website">
 <meta property="og:title" content="丘山">
-<meta property="og:url" content="http://blog.ifnull.cn/tags/index.html">
+<meta property="og:url" content="http://blog.ifnull.cn/tags/代码片段/index.html">
 <meta property="og:site_name" content="丘山">
 <meta property="og:description" content="enum ...">
 <meta property="og:locale" content="default">
@@ -101,7 +101,7 @@
                 
                 <a class="navbar-item" href="/categories">归类</a>
                 
-                <a class="navbar-item is-active" href="/tags">标签</a>
+                <a class="navbar-item" href="/tags">标签</a>
                 
                 <a class="navbar-item" href="/about">关于丘山</a>
                 
@@ -132,53 +132,64 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card widget">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
     <div class="card-content">
-        <div class="menu">
-            <h3 class="menu-label">
-                Tags
-            </h3>
-            <div class="field is-grouped is-grouped-multiline">
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul>
+            <li><a href="/tags">Tags</a></li>
+            <li class="is-active"><a href="#" aria-current="page">代码片段</a></li>
+        </ul>
+        </nav>
+    </div>
+</div>
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-02-01T07:00:00.000Z">2019/02/01</time>
                 
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/Css/">
-                        <span class="tag">Css</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/前端/">前端</a>
                 </div>
                 
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/Event/">
-                        <span class="tag">Event</span>
-                        <span class="tag is-grey">3</span>
-                    </a>
-                </div>
                 
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/JavaScript/">
-                        <span class="tag">JavaScript</span>
-                        <span class="tag is-grey">7</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/代码片段/">
-                        <span class="tag">代码片段</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/工具/">
-                        <span class="tag">工具</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
+                <span class="level-item has-text-grey">
+                    
+                    
+                    a few seconds read (About 68 words)
+                </span>
                 
             </div>
         </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/02/01/safari中window-open-被拦截/">safari中window.open 被拦截</a>
+            
+        </h1>
+        <div class="content">
+            <blockquote>
+<p>safari、以及某些浏览器会被安全拦截。通过异步的方式调用，可以解决</p>
+</blockquote>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// open 方法返回一个对象：此时打开一个新tab</span><br><span class="line">var windowLink = window.open(&apos;&apos;, &apos;_blank&apos;);</span><br><span class="line"></span><br><span class="line">// 触发资源下载</span><br><span class="line">windowLink.location = openUrl;</span><br><span class="line"></span><br><span class="line">// 关闭方法</span><br><span class="line">windowLink.close();</span><br></pre></td></tr></table></figure>
+        </div>
+        
+        
+        
     </div>
-</div></div>
+</div>
+
+
+
+
+
+
+
+
+</div>
                 
 
 

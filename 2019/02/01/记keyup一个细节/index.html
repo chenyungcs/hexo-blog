@@ -2,22 +2,23 @@
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>Tags - 丘山</title>
+<title>记keyup一个细节  - 丘山</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="enum ...">
-<meta name="keywords" content="JavaScript,代码片段,Css,Event,工具">
-<meta property="og:type" content="website">
-<meta property="og:title" content="丘山">
-<meta property="og:url" content="http://blog.ifnull.cn/tags/index.html">
+    <meta name="description" content="需求：在客户端监听keyup事件，实现数据切换  12// 识别按键，分别执行数据切换、数据提交操作window.addEventListener(&amp;apos;keyup&amp;apos;, this.handleKeyUpEvent); 在keyup事件中，会去同步数据同时刷新dom节点。数据刷新不及时、页面感觉卡顿，why?分析按键事件，keydown -&amp;gt; keyup，这是两兄弟，对吧？所">
+<meta name="keywords" content="JavaScript,Event">
+<meta property="og:type" content="article">
+<meta property="og:title" content="记keyup一个细节 ">
+<meta property="og:url" content="http://blog.ifnull.cn/2019/02/01/记keyup一个细节/index.html">
 <meta property="og:site_name" content="丘山">
-<meta property="og:description" content="enum ...">
+<meta property="og:description" content="需求：在客户端监听keyup事件，实现数据切换  12// 识别按键，分别执行数据切换、数据提交操作window.addEventListener(&amp;apos;keyup&amp;apos;, this.handleKeyUpEvent); 在keyup事件中，会去同步数据同时刷新dom节点。数据刷新不及时、页面感觉卡顿，why?分析按键事件，keydown -&amp;gt; keyup，这是两兄弟，对吧？所">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-02-01T06:57:16.048Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="丘山">
-<meta name="twitter:description" content="enum ...">
+<meta name="twitter:title" content="记keyup一个细节 ">
+<meta name="twitter:description" content="需求：在客户端监听keyup事件，实现数据切换  12// 识别按键，分别执行数据切换、数据提交操作window.addEventListener(&amp;apos;keyup&amp;apos;, this.handleKeyUpEvent); 在keyup事件中，会去同步数据同时刷新dom节点。数据刷新不及时、页面感觉卡顿，why?分析按键事件，keydown -&amp;gt; keyup，这是两兄弟，对吧？所">
 
 
 
@@ -87,7 +88,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="丘山" height="28">
+                <img src="/images/logo.svg" alt="记keyup一个细节 " height="28">
             
             </a>
         </div>
@@ -101,7 +102,7 @@
                 
                 <a class="navbar-item" href="/categories">归类</a>
                 
-                <a class="navbar-item is-active" href="/tags">标签</a>
+                <a class="navbar-item" href="/tags">标签</a>
                 
                 <a class="navbar-item" href="/about">关于丘山</a>
                 
@@ -132,53 +133,113 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card widget">
-    <div class="card-content">
-        <div class="menu">
-            <h3 class="menu-label">
-                Tags
-            </h3>
-            <div class="field is-grouped is-grouped-multiline">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-02-01T06:56:00.000Z">2019/02/01</time>
                 
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/Css/">
-                        <span class="tag">Css</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/前端/">前端</a>
                 </div>
                 
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/Event/">
-                        <span class="tag">Event</span>
-                        <span class="tag is-grey">3</span>
-                    </a>
-                </div>
                 
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/JavaScript/">
-                        <span class="tag">JavaScript</span>
-                        <span class="tag is-grey">7</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/代码片段/">
-                        <span class="tag">代码片段</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
-                
-                <div class="control">
-                    <a class="tags has-addons" href="/tags/工具/">
-                        <span class="tag">工具</span>
-                        <span class="tag is-grey">1</span>
-                    </a>
-                </div>
+                <span class="level-item has-text-grey">
+                    
+                    
+                    2 minutes read (About 307 words)
+                </span>
                 
             </div>
         </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                记keyup一个细节 
+            
+        </h1>
+        <div class="content">
+            <blockquote>
+<p>需求：在客户端监听keyup事件，实现数据切换</p>
+</blockquote>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 识别按键，分别执行数据切换、数据提交操作</span><br><span class="line">window.addEventListener(&apos;keyup&apos;, this.handleKeyUpEvent);</span><br></pre></td></tr></table></figure>
+<p>在keyup事件中，会去同步数据同时刷新<code>dom节点</code>。数据刷新不及时、页面感觉卡顿，why?<br>分析按键事件，<code>keydown -&gt; keyup</code>，这是两兄弟，对吧？所以keyup肯定是发生在keydown之后啦，所以页面卡顿… emum，具体延迟如下：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">window.addEventListener(&apos;keydown&apos;, () =&gt; &#123;</span><br><span class="line">	console.time(&apos;keyup&apos;);</span><br><span class="line">&#125;); </span><br><span class="line"></span><br><span class="line">window.addEventListener(&apos;keyup&apos;, () =&gt; &#123;</span><br><span class="line">	console.timeEnd(&apos;keyup&apos;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// _&gt; keyup: 156.1640625ms</span><br><span class="line">// _&gt; keyup: 156.760009765625ms</span><br><span class="line">// _&gt; keyup: 47.076904296875ms</span><br></pre></td></tr></table></figure>
+<p>手速是响应的关键，并且，我觉得keyup事件，没这么简单，会不会还有「释放资源」这种骚操作？<strong>所以keyup处理的事情越简单，越好吧</strong></p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 改为keydown，keydown执行多次，节流？还是另行其法</span><br><span class="line">window.addEventListener(&apos;keydown&apos;, this.handleKeyDown);</span><br></pre></td></tr></table></figure>
+<p>keydown 会执行多次，在我的业务场景中，希望点一下按键，执行一下操作，所以，我希望，keydown执行一次，keyup一次，代码如下：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">let keyUp = true;</span><br><span class="line">window.addEventListener(&apos;keydown&apos;, () =&gt; &#123;</span><br><span class="line">	if (keyUp) &#123;</span><br><span class="line">		keyUp = false;</span><br><span class="line">		// things to do</span><br><span class="line">	&#125;</span><br><span class="line">&#125;); </span><br><span class="line"></span><br><span class="line">window.addEventListener(&apos;keyup&apos;, () =&gt; &#123;</span><br><span class="line">	keyUp = true;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><strong>最后：</strong> 记得销毁事件</p>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Event/">Event</a>, <a class="has-link-grey -link" href="/tags/JavaScript/">JavaScript</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
     </div>
-</div></div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/02/01/调试接口很痛苦有木有，小试一下Mock/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">调试接口很痛苦有木有，小试一下Mock</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/02/01/记一次unload相关的问题/">
+                <span class="level-item">记一次unload相关的问题</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">Comments</h3>
+        
+<script>
+    var disqus_config = function () {
+        this.page.url = 'http://blog.ifnull.cn/2019/02/01/记keyup一个细节/';
+        this.page.identifier = '2019/02/01/记keyup一个细节/';
+    };
+    (function() {
+        var d = document, s = d.createElement('script');  
+        s.src = '//' + 'ifnull-blog' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<div id="disqus_thread">
+    
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+    </div>
+</div>
+</div>
                 
 
 
@@ -689,7 +750,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="丘山" height="28">
+                    <img src="/images/logo.svg" alt="记keyup一个细节 " height="28">
                 
                 </a>
                 <p class="is-size-7">

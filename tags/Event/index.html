@@ -2,7 +2,7 @@
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>Etiqueta: Event - 丘山</title>
+<title>Tag: Event - 丘山</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
@@ -23,7 +23,7 @@
 
 
 
-<link rel="icon" href="/images/favicon.svg">
+<link rel="icon" href="/images/logo.svg">
 
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
@@ -136,12 +136,125 @@
     <div class="card-content">
         <nav class="breadcrumb" aria-label="breadcrumbs">
         <ul>
-            <li><a href="/tags">Etiquetas</a></li>
+            <li><a href="/tags">Tags</a></li>
             <li class="is-active"><a href="#" aria-current="page">Event</a></li>
         </ul>
         </nav>
     </div>
 </div>
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-02-01T06:59:00.000Z">2019/02/01</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/前端/">前端</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    2 minutes read (About 290 words)
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/02/01/浏览器关闭前向服务器发送一个请求，报告状态/">浏览器关闭前向服务器发送一个请求，报告状态</a>
+            
+        </h1>
+        <div class="content">
+            <blockquote>
+<p>现接到一个需求，收集用户在我司网站的访问行为。</p>
+</blockquote>
+<h2 id="unload"><a href="#unload" class="headerlink" title="unload"></a><code>unload</code></h2><blockquote>
+<p>当页面发生跳转、关闭、刷新会先执行<code>beforeUnload</code>，待确认后在执行<code>unload</code>，所以<code>beforeUnload</code>并不能确保一定会关闭</p>
+</blockquote>
+<p>那就在<code>unload</code>事件里处理呗</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">window.onunload = function () &#123;</span><br><span class="line">document.getElement(&apos;testImg&apos;).src = &apos;http://xxxx.com/collect_page?url=xxxxx&apos;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>设置<code>&lt;img /&gt;</code>标签地址为接口地址，然后发生请求，然后下班完事了。这么简单？实际情况是：我败了！</p>
+<p>balabala….!!!!</p>
+<p>网上一顿搜索，都说「同步请求」可解决问题。想象<code>alert</code>是同步执行，可阻止进程，那就试一下吧。</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">window.onunload = function () &#123;</span><br><span class="line">    var req = new XMLHttpRequest();</span><br><span class="line">    req.open(&apos;GET&apos;, &apos;http://127.0.0.1:7002/login?id=1&apos;, false);</span><br><span class="line">    req.send();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>大功告成，下班走人！！</p>
+<p>哎！等等好像跟<code>alert</code>没半毛钱关系… 继续关注中…<br>其实就是跟<code>alert</code>有关。只不过只有<code>IE</code>可以弹出<code>alert</code>。其他浏览器由于安全策略都不允许弹出</p>
+<p><img src="https://user-images.githubusercontent.com/10740017/40912301-bfcc03fa-6823-11e8-870a-417df714dea6.png" alt="image"></p>
+<p>不同浏览器、系统间略有差别，暂时参考 #19 </p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-02-01T06:56:00.000Z">2019/02/01</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/前端/">前端</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    2 minutes read (About 307 words)
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/02/01/记keyup一个细节/">记keyup一个细节 </a>
+            
+        </h1>
+        <div class="content">
+            <blockquote>
+<p>需求：在客户端监听keyup事件，实现数据切换</p>
+</blockquote>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 识别按键，分别执行数据切换、数据提交操作</span><br><span class="line">window.addEventListener(&apos;keyup&apos;, this.handleKeyUpEvent);</span><br></pre></td></tr></table></figure>
+<p>在keyup事件中，会去同步数据同时刷新<code>dom节点</code>。数据刷新不及时、页面感觉卡顿，why?<br>分析按键事件，<code>keydown -&gt; keyup</code>，这是两兄弟，对吧？所以keyup肯定是发生在keydown之后啦，所以页面卡顿… emum，具体延迟如下：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">window.addEventListener(&apos;keydown&apos;, () =&gt; &#123;</span><br><span class="line">	console.time(&apos;keyup&apos;);</span><br><span class="line">&#125;); </span><br><span class="line"></span><br><span class="line">window.addEventListener(&apos;keyup&apos;, () =&gt; &#123;</span><br><span class="line">	console.timeEnd(&apos;keyup&apos;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// _&gt; keyup: 156.1640625ms</span><br><span class="line">// _&gt; keyup: 156.760009765625ms</span><br><span class="line">// _&gt; keyup: 47.076904296875ms</span><br></pre></td></tr></table></figure>
+<p>手速是响应的关键，并且，我觉得keyup事件，没这么简单，会不会还有「释放资源」这种骚操作？<strong>所以keyup处理的事情越简单，越好吧</strong></p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 改为keydown，keydown执行多次，节流？还是另行其法</span><br><span class="line">window.addEventListener(&apos;keydown&apos;, this.handleKeyDown);</span><br></pre></td></tr></table></figure>
+<p>keydown 会执行多次，在我的业务场景中，希望点一下按键，执行一下操作，所以，我希望，keydown执行一次，keyup一次，代码如下：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">let keyUp = true;</span><br><span class="line">window.addEventListener(&apos;keydown&apos;, () =&gt; &#123;</span><br><span class="line">	if (keyUp) &#123;</span><br><span class="line">		keyUp = false;</span><br><span class="line">		// things to do</span><br><span class="line">	&#125;</span><br><span class="line">&#125;); </span><br><span class="line"></span><br><span class="line">window.addEventListener(&apos;keyup&apos;, () =&gt; &#123;</span><br><span class="line">	keyUp = true;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><strong>最后：</strong> 记得销毁事件</p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
 
     <div class="card">
     
@@ -250,17 +363,17 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Entradas
+                        Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        2
+                        8
                     </p>
                 </div>
             </div>
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Categoria
+                        Category
                     </p>
                     <p class="title has-text-weight-normal">
                         1
@@ -270,17 +383,17 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Etiquetas
+                        Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        2
+                        5
                     </p>
                 </div>
             </div>
         </nav>
         <div class="level">
             <a class="level-item button is-link is-rounded" href="http://github.com/chenyungcs">
-                SEGUIR</a>
+                Follow</a>
         </div>
         
         
@@ -322,7 +435,7 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Categorias
+                Categories
             </h3>
             <ul class="menu-list">
             <li>
@@ -331,7 +444,7 @@
                 <span class="level-item">前端</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">7</span>
             </span>
         </a></li>
             </ul>
@@ -346,21 +459,21 @@
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Recientes
+            Recent
         </h3>
         
         <article class="media">
             
-            <a href="/2019/02/01/记一次unload相关的问题/" class="media-left">
+            <a href="/2019/02/01/一些JavaScript知识点记录/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="记一次unload相关的问题">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="一些JavaScript知识点记录">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-01T03:27:00.000Z">2019/02/01</time></div>
-                    <a href="/2019/02/01/记一次unload相关的问题/" class="has-link-black-ter is-size-6">记一次unload相关的问题</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-01T07:05:00.000Z">2019/02/01</time></div>
+                    <a href="/2019/02/01/一些JavaScript知识点记录/" class="has-link-black-ter is-size-6">一些JavaScript知识点记录</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/前端/">前端</a>
                     </p>
@@ -370,18 +483,75 @@
         
         <article class="media">
             
-            <a href="/2019/02/01/如何处理IOS端输入法导致fixed元素显示异常？/" class="media-left">
+            <a href="/2019/02/01/一次面试准备/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="如何处理IOS端输入法导致fixed元素显示异常？">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="一次面试准备">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-01T02:52:19.000Z">2019/02/01</time></div>
-                    <a href="/2019/02/01/如何处理IOS端输入法导致fixed元素显示异常？/" class="has-link-black-ter is-size-6">如何处理IOS端输入法导致fixed元素显示异常？</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-01T07:04:00.000Z">2019/02/01</time></div>
+                    <a href="/2019/02/01/一次面试准备/" class="has-link-black-ter is-size-6">一次面试准备</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/前端/">前端</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/02/01/safari中window-open-被拦截/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="safari中window.open 被拦截">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-01T07:00:00.000Z">2019/02/01</time></div>
+                    <a href="/2019/02/01/safari中window-open-被拦截/" class="has-link-black-ter is-size-6">safari中window.open 被拦截</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/前端/">前端</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/02/01/浏览器关闭前向服务器发送一个请求，报告状态/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="浏览器关闭前向服务器发送一个请求，报告状态">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-01T06:59:00.000Z">2019/02/01</time></div>
+                    <a href="/2019/02/01/浏览器关闭前向服务器发送一个请求，报告状态/" class="has-link-black-ter is-size-6">浏览器关闭前向服务器发送一个请求，报告状态</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/前端/">前端</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/02/01/调试接口很痛苦有木有，小试一下Mock/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="调试接口很痛苦有木有，小试一下Mock">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-01T06:58:00.000Z">2019/02/01</time></div>
+                    <a href="/2019/02/01/调试接口很痛苦有木有，小试一下Mock/" class="has-link-black-ter is-size-6">调试接口很痛苦有木有，小试一下Mock</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/前端/">前端</a>
                     </p>
                 </div>
             </div>
@@ -395,7 +565,7 @@
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archivos
+            Archives
         </h3>
         <ul class="menu-list">
         
@@ -405,7 +575,7 @@
                     <span class="level-item">February 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">8</span>
                 </span>
             </a>
         </li>
@@ -419,20 +589,41 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Etiquetas
+                Tags
             </h3>
             <div class="field is-grouped is-grouped-multiline">
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/Css/">
+                        <span class="tag">Css</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Event/">
                         <span class="tag">Event</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/JavaScript/">
                         <span class="tag">JavaScript</span>
+                        <span class="tag is-grey">7</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/代码片段/">
+                        <span class="tag">代码片段</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/工具/">
+                        <span class="tag">工具</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -457,21 +648,21 @@
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Recientes
+            Recent
         </h3>
         
         <article class="media">
             
-            <a href="/2019/02/01/记一次unload相关的问题/" class="media-left">
+            <a href="/2019/02/01/一些JavaScript知识点记录/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="记一次unload相关的问题">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="一些JavaScript知识点记录">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-01T03:27:00.000Z">2019/02/01</time></div>
-                    <a href="/2019/02/01/记一次unload相关的问题/" class="has-link-black-ter is-size-6">记一次unload相关的问题</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-01T07:05:00.000Z">2019/02/01</time></div>
+                    <a href="/2019/02/01/一些JavaScript知识点记录/" class="has-link-black-ter is-size-6">一些JavaScript知识点记录</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/前端/">前端</a>
                     </p>
@@ -481,18 +672,75 @@
         
         <article class="media">
             
-            <a href="/2019/02/01/如何处理IOS端输入法导致fixed元素显示异常？/" class="media-left">
+            <a href="/2019/02/01/一次面试准备/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="如何处理IOS端输入法导致fixed元素显示异常？">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="一次面试准备">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-01T02:52:19.000Z">2019/02/01</time></div>
-                    <a href="/2019/02/01/如何处理IOS端输入法导致fixed元素显示异常？/" class="has-link-black-ter is-size-6">如何处理IOS端输入法导致fixed元素显示异常？</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-01T07:04:00.000Z">2019/02/01</time></div>
+                    <a href="/2019/02/01/一次面试准备/" class="has-link-black-ter is-size-6">一次面试准备</a>
                     <p class="is-size-7 is-uppercase">
-                        
+                        <a class="has-link-grey -link" href="/categories/前端/">前端</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/02/01/safari中window-open-被拦截/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="safari中window.open 被拦截">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-01T07:00:00.000Z">2019/02/01</time></div>
+                    <a href="/2019/02/01/safari中window-open-被拦截/" class="has-link-black-ter is-size-6">safari中window.open 被拦截</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/前端/">前端</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/02/01/浏览器关闭前向服务器发送一个请求，报告状态/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="浏览器关闭前向服务器发送一个请求，报告状态">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-01T06:59:00.000Z">2019/02/01</time></div>
+                    <a href="/2019/02/01/浏览器关闭前向服务器发送一个请求，报告状态/" class="has-link-black-ter is-size-6">浏览器关闭前向服务器发送一个请求，报告状态</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/前端/">前端</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/02/01/调试接口很痛苦有木有，小试一下Mock/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="调试接口很痛苦有木有，小试一下Mock">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-01T06:58:00.000Z">2019/02/01</time></div>
+                    <a href="/2019/02/01/调试接口很痛苦有木有，小试一下Mock/" class="has-link-black-ter is-size-6">调试接口很痛苦有木有，小试一下Mock</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/前端/">前端</a>
                     </p>
                 </div>
             </div>
@@ -506,7 +754,7 @@
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archivos
+            Archives
         </h3>
         <ul class="menu-list">
         
@@ -516,7 +764,7 @@
                     <span class="level-item">February 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">8</span>
                 </span>
             </a>
         </li>
@@ -530,20 +778,41 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Etiquetas
+                Tags
             </h3>
             <div class="field is-grouped is-grouped-multiline">
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/Css/">
+                        <span class="tag">Css</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Event/">
                         <span class="tag">Event</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/JavaScript/">
                         <span class="tag">JavaScript</span>
+                        <span class="tag is-grey">7</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/代码片段/">
+                        <span class="tag">代码片段</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/工具/">
+                        <span class="tag">工具</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -692,10 +961,10 @@ document.addEventListener('DOMContentLoaded', function () {
     (function (window) {
         var INSIGHT_CONFIG = {
             TRANSLATION: {
-                POSTS: 'Entradas',
+                POSTS: 'Posts',
                 PAGES: 'Pages',
-                CATEGORIES: 'Categorias',
-                TAGS: 'Etiquetas',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
                 UNTITLED: '(Untitled)',
             },
             CONTENT_URL: '/content.json',
